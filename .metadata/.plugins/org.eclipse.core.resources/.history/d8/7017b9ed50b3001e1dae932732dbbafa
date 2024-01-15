@@ -1,0 +1,6 @@
+package com.khit.board.repository;
+
+// @Repository 생략 가능
+public interface MemberRepository {
+
+}

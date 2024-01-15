@@ -1,0 +1,7 @@
+package com.khit.study.repository;
+
+public class QueryMethodTest {
+	
+	private BoardRepository boardRepository;
+
+}

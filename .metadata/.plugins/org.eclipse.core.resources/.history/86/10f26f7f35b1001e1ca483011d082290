@@ -1,0 +1,8 @@
+package com.khit.study.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+//JPARepository를 상속해야 한다
+public interface BoardRepository extends JpaRepository<Board, Integer>{
+
+}

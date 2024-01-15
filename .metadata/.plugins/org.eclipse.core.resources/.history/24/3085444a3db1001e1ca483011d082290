@@ -1,0 +1,17 @@
+package com.khit.study.service;
+
+import org.springframework.stereotype.Controller;
+
+import com.khit.study.entity.BoardVO;
+
+@Controller
+public class BoardRESTService {
+
+	//상세보기
+	public BoardVO getBoard() {
+		//게시글 1건 생성
+		BoardVO board = new BoardVO();
+		
+		return board;
+	}
+}

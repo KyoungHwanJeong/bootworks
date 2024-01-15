@@ -1,0 +1,9 @@
+package com.khit.board.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+// @Repository 생략 가능
+//JPAReporsitory를 상속 받아야 함
+public interface MemberRepository extends JpaRepository<T, ID>{
+
+}

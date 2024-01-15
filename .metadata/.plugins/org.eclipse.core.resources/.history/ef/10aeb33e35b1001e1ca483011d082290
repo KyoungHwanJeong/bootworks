@@ -1,0 +1,10 @@
+package com.khit.study.entity;
+
+public class BoardVO {
+	//필드
+	private int id;
+	private String title;
+	private String writer;
+	private String content;
+	private Date createdDate;
+}

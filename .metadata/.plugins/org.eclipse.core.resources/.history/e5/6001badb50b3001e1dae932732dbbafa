@@ -1,0 +1,6 @@
+package com.khit.board.repository;
+
+
+public interface MemberRepository {
+
+}

@@ -1,0 +1,6 @@
+package com.khit.study.repository;
+
+//JPARepository를 상속해야 한다
+public interface BoardRepository {
+
+}

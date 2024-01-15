@@ -1,0 +1,5 @@
+package com.khit.board.dto;
+
+public class Member {
+
+}

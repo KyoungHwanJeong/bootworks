@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#container{width:1200px; margin: 30px auto;}
+h2{color: red; text-align:center;}
+ul li{list-style:none; margin: 16px;}
+
+/* index 스타일 */
+.main-img{text-align:center;}
+.menu{text-align:center;}
+
+/* 회원가입 스타일 */
+.joinForm{width: 450px; margin: 0 auto;}
+.joinForm label{width: 100px; float:left;}
+.joinForm input{padding:4px;}
+

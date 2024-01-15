@@ -1,0 +1,11 @@
+package com.khit.study.service;
+
+import org.springframework.stereotype.Service;
+
+import com.khit.study.repository.BoardRepository;
+
+@Service
+public class BoardService {
+
+	private BoardRepository boardRepository;
+}

@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+#container{width:1200px; margin: 30px auto;}
+h2{color: red; text-align:center;}
+.main-img{text-align:center;}

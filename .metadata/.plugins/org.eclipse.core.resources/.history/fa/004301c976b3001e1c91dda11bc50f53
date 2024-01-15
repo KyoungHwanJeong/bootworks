@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>MyHome</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div id="container">
+		<div th:if=${session.sessionEmail != null">
+		<!--  ${session.세션이름} -->
+		<h2 th:text="${session.sessionEmail} + '님 환영합니다.'"></h2>
+		</div>
+		<div th:if=${session.sessionEmail == null"}>
+			<script th:inline="javascript">
+				alert('11');
+			</script>
+		</div>		
+	</div>
+</body>
+
+</html>

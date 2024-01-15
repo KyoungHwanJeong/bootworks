@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>상세보기...</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div id="container">
+		<h2>회원정보</h2>
+		<div class="detail">
+			<fieldset>
+				<ul>
+					<li>
+						<label for="memberEmail">이메일</label>
+						<input type="text" name="memberEmail" 
+								id="memberEmail" th:value="${member.memberEmail}" readonly>
+					</li>
+					<li>
+						<label for="memberPassword">비밀번호</label>
+						<input type="password" name="memberPassword" 
+								id="memberPassword" th:value="${member.memberPassword}" readonly>
+					</li>
+					<li>
+						<label for="memberName">이름</label>
+						<input type="text" name="memberName" 
+								id="memberName" th:value="${member.memberName}" readonly>
+					</li>
+					<li>
+						<label for="memberAge">나이</label>
+						<input type="text" name="memberAge" 
+								id="memberAge" th:value="${member.memberAge}" readonly>
+					</li>
+					<li>
+						<a th:href="@{member/list}">
+						<button type="button">목록</button>
+						</a>
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+	</div>
+</body>
+</html>
