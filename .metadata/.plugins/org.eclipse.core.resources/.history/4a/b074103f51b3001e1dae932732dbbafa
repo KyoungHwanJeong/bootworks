@@ -1,8 +1,0 @@
-package com.khit.board.repository.service;
-
-public class Snippet {
-	public static void main(String[] args) {
-		(length= 30, nullable=false)
-	}
-}
-

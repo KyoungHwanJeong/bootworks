@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import com.khit.board.dto.MemberDTO;
 import com.khit.board.entity.Member;
+import com.khit.board.exception.BootBoardException;
 import com.khit.board.repository.MemberRepository;
 
 import lombok.AllArgsConstructor;
@@ -55,11 +56,15 @@ public class MemberService {
 		//db 에서 member 1개 꺼내오기
 		//findById(id).get()
 		//memberRepository.findById(id).get() = .get()으로 1개만 받아온다
-		Member member = memberRepository.findById(id).get();
-		//entity -> dto로 변환한다
-		MemberDTO memberDTO = MemberDTO.toSaveDTO(member);
-		
-		return memberDTO;
+		Optional<Member> member = memberRepository.findById(id);
+		if(member.isPresent()) {
+			//entity -> dto로 변환한다
+			MemberDTO memberDTO = MemberDTO.toSaveDTO(member.get());
+			
+			return memberDTO;
+		}else {
+			throw new BootBoardException("찾는 데이터가 없습니다.");	//없는 id 페이지 작동시
+		}
 	}
 
 	public void deleteById(Long id) {
@@ -73,7 +78,7 @@ public class MemberService {
 			memberRepository.findByMemberEmail(memberDTO.getMemberEmail());
 		
 		if(memberEmail.isPresent()) {
-			//조회 결로 이메일이 있음 - 1건 가져오기
+			//조회 결과로 이메일이 있음 - 1건 가져오기
 			Member member = memberEmail.get();
 			//비밀 번호 일치
 			if(member.getMemberPassword().equals(memberDTO.getMemberPassword())){
@@ -92,6 +97,7 @@ public class MemberService {
 	//수정 페이지 가져오기
 	public MemberDTO findByMemberEmail(String email) {
 		//db에 있는 이메일ㄹ로 검색한 회원 객체를 가져오고
+		// id가 없을 때 오류 처리 - "url을 찾을 수 없습니다"
 		Member member = memberRepository.findByMemberEmail(email).get();
 		//회원 객체(entity)를 dto로 변환
 		MemberDTO memberDTO = MemberDTO.toSaveDTO(member);
@@ -104,5 +110,17 @@ public class MemberService {
 		//id가 있는 엔티티의 메서드가 필요하다
 		memberRepository.save(member);
 	}
+
+	//유효성 검사
+	public String checkEmail(String memberEmail) {
+		//db에 있는 이메일을 조회해서 있으면 "OK"문자를 보내고 없으면 "NO"를 보낸다
+		Optional<Member> findmember = memberRepository.findByMemberEmail(memberEmail);
+		if(findmember.isEmpty()) {//db에 회원이 없으면 가입해도 되는 "OK" 문자를 반환한다
+			return "OK";
+		}else {
+			return "NO";
+		}
+	}
+	
 
 }

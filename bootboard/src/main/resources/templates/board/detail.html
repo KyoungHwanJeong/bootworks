@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>글 상세보기...</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div id="container">
+		<h2>글 상세보기</h2>
+		<div class="b_detail">
+			<table class="tbl_list">
+				<tbody>
+					<tr>
+						<td>
+							<input type="text" name="boardTitle"
+							th:value="${board.boardTitle}" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" name="boardWriter"
+							th:value="${board.boardWriter}" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<textarea rows="5" cols="50" name="boardContent"
+							th:text="${board.boardContent}" readonly></textarea>
+							
+							<th:if test="${not empty board.filename}">
+								<img th:src="@{${board.filepath}}" alt="이미지">
+							</th:if>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span th:text="'조회 수: ' + ${board.boardHits}"></span>
+						</td>
+						<!-- <td>
+							<input type="text" name="boardHits"
+							th:value= "'조회 수: ' + ${board.boardHits}" readonly>
+						</td> -->
+					</tr>
+					<tr>
+						<td>
+							<span th:if="${board.updatedDate} != null"
+									th:text="'수정일: ' + ${#temporals.format(board.updatedDate,
+									'yyyy년 MM월 dd일 HH:mm:ss')}"></span> 
+							<span th:unless="${board.updatedDate} != null"
+									th:text="'작성일: ' + ${#temporals.format(board.createdDate,
+									'yyyy년 MM월 dd일 HH:mm:ss')}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span th:if="${session.sessionName == board.boardWriter}">
+								<a th:href="@{|/board/update/${board.id}|}">
+									<input type="button" value="수정">
+								</a>
+								<a th:href="@{|/board/delete/${board.id}|}"
+									onclick="return confirm('정말로 삭제 하시겠습니까?')">
+									<input type="button" value="삭제">
+								</a>
+							</span>
+							<span th:unless="${session.sessionName == board.boardWriter}">
+								<a th:href="@{/member/login}">
+									<input type="button" value="로그인 페이지로 이동">
+								</a>
+							</span>
+							<!--  Pageable 클래스의 page -> getPageNumber() -->
+							<a th:href="@{/board/pagelist(page=${page})}">
+								<input type="button" value="글 목록으로 이동">
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

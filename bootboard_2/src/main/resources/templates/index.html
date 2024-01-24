@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>MYHome</title>
+</head>
+<body>
+	<div id="container">
+		<h2>MyHome</h2>
+		<div>
+			<img th:src="@{/images/bear.jpg}" alt="곰">
+		</div>
+		<div>
+			<a th:href="@{/member/join}">회원 가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/member/list}">회원 목록</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/member/login}">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/board/write}">글쓰기</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/board/list}">글목록</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+	</div>
+</body>
+</html>

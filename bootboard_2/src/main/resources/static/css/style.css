@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+#container{width:1200px; margin: 30px auto;}
+h2{color: blue; text-align:center;}
+ul li{list-style:none; margin: 16px;}
+a{text-decoration:none;}
+
+/* index 스타일 */
+.main-img{text-align:center;}
+.menu{text-align:center;}
+
+/* join 스타일 */
+.joinForm{width: 450px; margin: 0 auto;}
+.joinForm label{width: 100px; float:left;}
+.joinForm input{padding:4px;}
+
+/* tbl_list 스타일 */
+.tbl_list{width:1000px; margin: 0 auto;
+	border-collapse: collapse;}
+.tbl_list th, td{border: 1px solid #ccc; padding: 8px;
+	text-align: center;}
+.tbl_list input[type="text"]{width: 980px; height: 25px;}
+.tbl_list textarea{width: 980px; height: 300px;}
+.pagination{margin: 10px; text-align:center;}
+.pagination a{padding: 4px; color:#555;}
+.btn_write{text-align: left; padding-left: 570px;}
+.pagination .current_page{color: #b00;}
+
+/* member detail 스타일 */
+.detail{width: 450px; margin: 0 auto;}
+.detail label{width: 100px; float:left;}
+.detail input{padding:4px;}
+
+/* login 스타일 */
+.error{color: #f00; font-size:0.9em;}
+
+/* write 스타일 */
+.writeForm{width: 1000p; margin: 0 auto;}
+.alert-danger{padding-left: 100px; color: red;}
+
+/* */

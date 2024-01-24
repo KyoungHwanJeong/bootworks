@@ -26,7 +26,7 @@ public class RESTController {
 	
 	@GetMapping("/greeting")
 	public String sayHello(String name) {
-		return "hello" + name;	//문자열을 전송한다
+		return "hello~" + name;	//문자열을 전송한다
 	}
 	
 	//객체 데이터를 브라우저에 보내준다

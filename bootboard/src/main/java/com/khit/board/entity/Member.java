@@ -8,8 +8,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder	// @Builder를 쓰려면 @AllArgsConstructor, @NoArgsConstructor를 넣어준다
 @Table(name = "tbl_member")
 @Data
 @Entity
@@ -29,11 +35,20 @@ public class Member {
 	
 	//dto를 매개로 받아서 entity에 저장하는 메서드 생성
 	public static Member toSaveEntity(MemberDTO memberDTO) {
+		/*
 		Member member = new Member();
 		member.setMemberEmail(memberDTO.getMemberEmail());
 		member.setMemberPassword(memberDTO.getMemberPassword());
 		member.setMemberName(memberDTO.getMemberName());
 		member.setMemberAge(memberDTO.getMemberAge());
+		*/
+		//builder()로 생성
+		Member member = Member.builder()
+				.memberEmail(memberDTO.getMemberEmail())
+				.memberPassword(memberDTO.getMemberPassword())
+				.memberName(memberDTO.getMemberName())
+				.memberAge(memberDTO.getMemberAge())
+				.build();
 		
 		return member;
 	}

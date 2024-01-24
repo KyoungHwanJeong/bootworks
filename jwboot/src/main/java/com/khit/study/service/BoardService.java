@@ -22,8 +22,9 @@ public class BoardService {
 	}
 	
 	public List<Board> findAll(){
-		//정렬 - 오름차순
+		//정렬 - 기본은 오름차순
 		//내림차순 - Sort 클래스 사용
+		//id를 기준으로 내림차순 정렬한다
 		return boardRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 	}
 	

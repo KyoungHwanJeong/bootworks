@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div id="container">
+		<h2>로그인</h2>
+		<form th:action="@{/member/login}" method="post" class = "loginForm">
+			<fieldset>
+				<ul>
+					<li>
+						<label for="memberEmail">이메일</label>
+						<input type="text" name="memberEmail" id="memberEmail"
+						placeholder="이메일" onblur= "checkEmail()">
+					</li>
+					<li>
+						<label for="memberPassword">비밀번호</label>
+						<input type="password" name="memberPassword" id="memberPassword"
+						placeholder="비밀번호">
+					</li>
+				</ul>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

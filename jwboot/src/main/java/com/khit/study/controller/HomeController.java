@@ -8,6 +8,6 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String home() {
-		return "index";	//home.html 파일을 전송한다
+		return "index";	//index.jsp
 	}
 }

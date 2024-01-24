@@ -1,7 +1,6 @@
 package com.khit.study.entity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
 

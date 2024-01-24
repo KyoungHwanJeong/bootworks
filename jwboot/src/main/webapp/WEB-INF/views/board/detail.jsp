@@ -14,18 +14,21 @@
 			<tbody>
 				<tr>
 					<td>
+					<label>글 번호</label>
 					<input type="text" name="id"
 						value="${board.id}">
 					</td>
 				</tr>
 				<tr>
 					<td>
+					<label>글 제목</label>
 					<input type="text" name="title"
 						value="${board.title}">
 					</td>
 				</tr>
 				<tr>
 					<td>
+					<label>작성자</label>
 					<input type="text" name="writer"
 						value="${board.writer}" >
 					</td>
@@ -41,15 +44,11 @@
 						<a href="/board/">
 							<button type="button">목록</button>
 						</a>
-					</td>
-					<td>
 						<a href="/board/update?id=${board.id}">
 							<button type="button">수정</button>
 						</a>
-					</td>
-					<td>
 						<a href="/board/delete?id=${board.id}"
-						onclick="return confirm('해당 글을 삭제하시겠습니까?')">
+							onclick="return confirm('해당 글을 삭제하시겠습니까?')">
 							<button type="button">삭제</button>
 						</a>
 					</td>

@@ -22,11 +22,10 @@
 		    	</tr>
 		    </thead>
 			<tbody>
-				<%-- <tr th:each="board: ${boardList}"> --%>
 				<c:forEach items="${boardList}" var="board">
-						<%-- <td>${board.id}</td> --%>
-						<td th:text="${board.id}></td>
- 						<td><a href="/board?id=${board.id}">${board.title}</a></td>
+					<tr>
+						<td>${board.id}</td>
+						<td><a href="/board?id=${board.id}">${board.title}</a></td>
 						<td>${board.writer}</td>
 						<td><fmt:formatDate value="${board.createdDate}" 
 								pattern="yyyy-MM-dd HH:mm:ss" /> </td>

@@ -15,18 +15,21 @@
 				<tbody>
 					<tr>
 						<td>
+							<label>글 번호</label>
 							<input type="text" name="id"
 								value="${board.id}" readonly>
 						</td>
 					</tr>
 					<tr>
 						<td>
+							<label>글 제목</label>
 							<input type="text" name="title"
 								value="${board.title}">
 						</td>
 					</tr>
 					<tr>
 						<td>
+							<label>작성자</label>
 							<input type="text" name="writer"
 								value="${board.writer}" readonly>
 						</td>

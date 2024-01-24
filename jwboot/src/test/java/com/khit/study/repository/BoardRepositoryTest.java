@@ -21,12 +21,13 @@ public class BoardRepositoryTest {
 	//게시글 생성
 	@Test
 	public void insertBoard() {
+		/*
 		Board board = new Board();
 		board.setTitle("가입 인사");
 		board.setWriter("김신입");
 		board.setContent("안녕하세요.");
 		board.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-		
+		*/
 		/*
 		Board board = Board.builder()
 				.title("test")
@@ -36,7 +37,7 @@ public class BoardRepositoryTest {
 				.build();
 		*/
 		//db에 저장
-		boardRepository.save(board);
+		//boardRepository.save(board);
 	}
 	
 	@Test
@@ -46,18 +47,18 @@ public class BoardRepositoryTest {
 		
 		//boardList 출력
 		/*
-		for(Board board : boardList)
+		for(Board board : boardList) {
 			log.info(board.toString());
+		}
 		*/
-		
-		//람다식으로 출력
+		//람다식
 		boardList.forEach(board -> log.info(board.toString()));
 	}
 	
 	//1건 상세보기
 	@Test
 	public void getBoard() {
-		//findById()와 get()을 사용
+		//findById()를 사용한다 이때 get()을 사용한다
 		Board board = boardRepository.findById(2).get();
 		log.info(board.toString());
 	}
@@ -65,7 +66,7 @@ public class BoardRepositoryTest {
 	//수정하기
 	@Test
 	public void updateBoard() {
-		//수정하려는 게시글을 가져와서(findById) 수정 처리해서 업데이트(save)
+		//수정하려는 게시글을 가져와서(findById) 수정처리(save)
 		Board board = boardRepository.findById(1).get();
 		board.setTitle("제목 수정");
 		board.setContent("내용 수정입니다.");
@@ -79,4 +80,6 @@ public class BoardRepositoryTest {
 		//3번 게시글 삭제
 		boardRepository.deleteById(3);
 	}
+	
+	
 }

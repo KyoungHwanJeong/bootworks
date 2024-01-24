@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Index...</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div id="container">
+		<h2>MyHome에 오셨습니다...</h2>
+		<div class="main-img">
+			<img th:src="@{/images/bear.jpg}" alt="곰">
+		</div>
+		<div class="menu">
+			<a th:href="@{/main}">메인페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/member/join}">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/member/list}">회원목록</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/board/list}">글목록</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/auth/main}">인증 메인</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>글 수정하기...</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div id="container">
+		<h2>글 수정하기</h2>
+		<form th:action="@{/board/update}" method="post" 
+		class ="update" enctype="multipart/form-data" >
+		<input type="hidden" name="id" th:value="${board.id}">
+		<input type="hidden" name="boardHits" th:value="${board.boardHits}">
+		<input type="hidden" name="boardFile" th:value="${board.filename}">
+		<table class="tbl_list">
+			<tbody>
+				<tr>
+					<td>
+						<input type="text" name="boardTitle"
+						th:value="${board.boardTitle}" >
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="boardWriter"
+						th:value="${board.boardWriter}" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<textarea rows="5" cols="50" name="boardContent"
+						th:text="${board.boardContent}" ></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>	
+						<input type="file" name="boardFile">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span th:text="'조회 수: ' + ${board.boardHits}"></span>
+					</td>
+					<!-- <td>
+						<input type="text" name="boardHits"
+						th:value="${board.boardHits}" readonly>
+					</td> -->
+				</tr>	
+				<tr>
+					<td>
+						<span th:if="${board.updatedDate} != null"
+								th:text="'수정일: ' + ${#temporals.format(board.updatedDate,
+								'yyyy년 MM월 dd일 HH:mm:ss')}"></span> 
+						<span th:unless="${board.updatedDate} != null"
+								th:text="'작성일: ' + ${#temporals.format(board.createdDate,
+								'yyyy년 MM월 dd일 HH:mm:ss')}"></span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="수정하기">
+						<input type="reset" value="취소하기">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+</body>
+
+</html>

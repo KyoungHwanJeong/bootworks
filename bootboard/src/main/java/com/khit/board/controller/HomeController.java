@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-
-	/*
-	 * @GetMapping("/") 
-	 * public String index() { 
-	 * return "index"; //index.html 
-	 * } = @Controller에 포함됨
-	 */
+	
+	  @GetMapping("/main") 
+	  public String index() { 
+	  return "main"; //index.html 
+	  } //= @Controller에 포함됨
+	 
 }
